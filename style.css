@@ -1,0 +1,113 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	place-content: center;
+	height: 100vh;
+	background-color: var(--very-dark-blue-main-bg);
+	font-family: 'Inter', sans-serif;
+
+	--very-dark-blue-main-bg: hsl(233, 47%, 7%);
+	--dark-desaturated-blue-card-bg: hsl(244, 38%, 16%);
+	--soft-violet-accent: hsl(277, 64%, 61%);
+
+	--white: hsl(0, 0%, 100%);
+	--slightly-transparent-white-mainp: hsla(0, 0%, 100%, 0.75);
+	--slightly-transparent-white-staths: hsla(0, 0%, 100%, 0.6);
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	object-fit: cover;
+	height: 100%;
+}
+
+.img-container {
+	position: relative;
+}
+
+.img-overlay {
+	position: absolute;
+	inset: 0;
+	background-color: hsl(277deg 64% 31% / 0.5);
+	z-index: 1;
+}
+
+.card-wrapper {
+	width: 300px;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: var(--dark-desaturated-blue-card-bg);
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 20px;
+	color: white;
+	padding: 20px 30px;
+}
+
+.card-content p {
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: var(--slightly-transparent-white-mainp);
+}
+
+.info-section {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	margin-top: 10px;
+}
+
+.info-section span {
+	font-family: 'Lexend Deca', sans-serif;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	letter-spacing: 1px;
+	font-weight: 400;
+	color: var(--slightly-transparent-white-staths);
+}
+
+@media (min-width: 1440px) {
+	.card-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		height: 300px;
+		width: 800px;
+	}
+	.img-container {
+		order: 2;
+	}
+	.card-content {
+		margin: auto;
+		text-align: start;
+		align-items: start;
+		justify-content: space-evenly;
+		height: 100%;
+		padding-block: 50px;
+		padding-left: 50px;
+		padding-right: 90px;
+		order: 1;
+	}
+
+	.card-content h1 {
+	}
+
+	.info-section {
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 0.9rem;
+	}
+}
